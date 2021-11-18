@@ -1,0 +1,585 @@
+2021-11-12 19:25:34,833 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [20645]
+2021-11-12 19:25:34,833 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-12 19:25:34,834 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-12 19:26:41,592 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-12 19:26:41,697 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-12 19:26:41,698 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-12 19:26:41,698 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [20645]
+2021-11-12 19:26:42,351 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [20659]
+2021-11-12 19:26:42,352 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-12 19:26:42,352 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-12 19:27:21,141 loglevel=ERROR  logger=uvicorn.error run_asgi() L376  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/_backends/_asyncio.py", line 805, in run_sync_in_worker_thread
+    return await future
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/_backends/_asyncio.py", line 743, in run
+    result = func(*args)
+  File "./routers/authRoutes.py", line 40, in signup
+    if user_service.get_user(user_details.email) != None:
+  File "./services/userService.py", line 14, in get_user
+    return get_user(self.db, user_id)
+  File "./services/userService.py", line 27, in get_user
+    return db.query(models.User).filter(models.User.id == user_id).first()
+AttributeError: 'Depends' object has no attribute 'query'
+2021-11-12 19:28:42,715 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-12 19:28:42,823 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-12 19:28:42,824 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-12 19:28:42,824 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [20659]
+2021-11-12 19:29:01,616 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [20700]
+2021-11-12 19:29:01,616 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-12 19:29:01,617 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-12 19:29:05,001 loglevel=ERROR  logger=uvicorn.error run_asgi() L376  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/_backends/_asyncio.py", line 805, in run_sync_in_worker_thread
+    return await future
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/_backends/_asyncio.py", line 743, in run
+    result = func(*args)
+  File "./routers/authRoutes.py", line 40, in signup
+    if user_service.get_user(user_details.email) != None:
+  File "./services/userService.py", line 13, in get_user
+    return get_user(self.db, user_id)
+  File "./services/userService.py", line 26, in get_user
+    return db.query(models.User).filter(models.User.id == user_id).first()
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2136, in query
+    return self._query_cls(entities, self, **kwargs)
+AttributeError: type object 'User' has no attribute '_query_cls'
+2021-11-12 19:34:52,057 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-12 19:34:52,164 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-12 19:34:52,164 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-12 19:34:52,164 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [20700]
+2021-11-17 09:55:09,083 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35540]
+2021-11-17 09:55:09,083 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 09:55:09,084 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 09:57:47,541 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 09:57:47,647 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 09:57:47,647 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 09:57:47,647 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35540]
+2021-11-17 09:57:48,387 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35567]
+2021-11-17 09:57:48,388 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 09:57:48,388 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 09:59:52,830 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 09:59:52,933 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 09:59:52,934 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 09:59:52,934 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35567]
+2021-11-17 10:00:22,028 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35600]
+2021-11-17 10:00:22,029 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:00:22,030 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:00:41,332 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:00:41,437 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:00:41,438 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:00:41,439 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35600]
+2021-11-17 10:00:42,045 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35607]
+2021-11-17 10:00:42,046 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:00:42,046 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:01:35,034 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:01:35,139 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:01:35,140 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:01:35,140 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35607]
+2021-11-17 10:01:35,540 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35617]
+2021-11-17 10:01:35,540 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:01:35,541 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:03:32,324 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:03:32,428 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:03:32,428 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:03:32,428 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35617]
+2021-11-17 10:03:33,167 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35632]
+2021-11-17 10:03:33,167 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:03:33,167 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:04:21,325 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:04:21,432 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:04:21,433 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:04:21,433 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35632]
+2021-11-17 10:04:22,151 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35641]
+2021-11-17 10:04:22,151 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:04:22,151 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:04:40,181 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:04:40,283 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:04:40,284 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:04:40,284 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35641]
+2021-11-17 10:04:41,004 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35648]
+2021-11-17 10:04:41,004 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:04:41,005 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:05:43,039 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:05:43,146 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:05:43,146 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:05:43,146 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35648]
+2021-11-17 10:05:43,872 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35662]
+2021-11-17 10:05:43,872 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:05:43,872 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:06:29,665 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:06:29,770 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:06:29,770 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:06:29,770 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35662]
+2021-11-17 10:06:30,493 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35674]
+2021-11-17 10:06:30,493 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:06:30,494 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:07:28,919 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:07:29,022 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:07:29,022 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:07:29,023 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35674]
+2021-11-17 10:07:29,736 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35686]
+2021-11-17 10:07:29,736 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:07:29,737 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:07:42,924 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:07:43,027 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:07:43,027 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:07:43,028 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35686]
+2021-11-17 10:07:43,506 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35693]
+2021-11-17 10:07:43,506 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:07:43,506 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:08:18,656 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:08:18,760 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:08:18,761 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:08:18,761 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35693]
+2021-11-17 10:08:19,454 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35701]
+2021-11-17 10:08:19,454 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:08:19,454 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:08:42,588 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:08:42,693 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:08:42,694 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:08:42,694 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35701]
+2021-11-17 10:08:43,119 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35706]
+2021-11-17 10:08:43,120 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:08:43,120 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:09:51,616 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:09:51,717 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:09:51,717 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:09:51,718 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35706]
+2021-11-17 10:09:52,125 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35713]
+2021-11-17 10:09:52,125 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:09:52,126 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:10:46,697 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:10:46,799 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:10:46,800 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:10:46,800 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35713]
+2021-11-17 10:10:56,215 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35728]
+2021-11-17 10:10:56,216 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:10:56,216 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:11:18,336 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:11:18,441 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:11:18,441 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:11:18,442 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35728]
+2021-11-17 10:11:19,150 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35737]
+2021-11-17 10:11:19,150 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:11:19,151 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:11:28,250 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:11:28,353 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:11:28,353 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:11:28,354 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35737]
+2021-11-17 10:11:28,758 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35744]
+2021-11-17 10:11:28,759 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:11:28,759 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:11:50,475 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:11:50,578 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:11:50,579 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:11:50,579 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35744]
+2021-11-17 10:11:50,986 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35749]
+2021-11-17 10:11:50,986 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:11:50,987 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:12:32,084 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:12:32,190 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:12:32,191 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:12:32,191 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35749]
+2021-11-17 10:12:32,650 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35759]
+2021-11-17 10:12:32,650 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:12:32,651 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:13:28,442 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:13:28,549 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35759]
+2021-11-17 10:13:28,556 loglevel=ERROR  logger=uvicorn.error send() L132  Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+
+2021-11-17 10:14:40,328 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35825]
+2021-11-17 10:14:40,328 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:14:40,329 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:15:08,998 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:15:09,099 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:15:09,100 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:15:09,100 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35825]
+2021-11-17 10:15:09,660 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35836]
+2021-11-17 10:15:09,660 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:15:09,660 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:16:29,772 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:16:29,878 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:16:29,878 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:16:29,878 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35836]
+2021-11-17 10:16:30,283 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35846]
+2021-11-17 10:16:30,283 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:16:30,283 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:18:37,855 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:18:37,962 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:18:37,963 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:18:37,963 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35846]
+2021-11-17 10:18:38,660 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35860]
+2021-11-17 10:18:38,660 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:18:38,661 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:22:54,812 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:22:54,918 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:22:54,920 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:22:54,920 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35860]
+2021-11-17 10:22:55,659 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35888]
+2021-11-17 10:22:55,660 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:22:55,660 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:23:38,101 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:23:38,201 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:23:38,202 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:23:38,202 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35888]
+2021-11-17 10:23:38,596 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35897]
+2021-11-17 10:23:38,597 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:23:38,597 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:24:01,076 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:24:01,178 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:24:01,178 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:24:01,179 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35897]
+2021-11-17 10:24:01,576 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35904]
+2021-11-17 10:24:01,577 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:24:01,577 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:24:15,404 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:24:15,505 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:24:15,506 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:24:15,506 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35904]
+2021-11-17 10:25:58,954 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35930]
+2021-11-17 10:25:58,954 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:25:58,955 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:27:29,444 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:27:29,554 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:27:29,555 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:27:29,555 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35930]
+2021-11-17 10:27:30,304 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35945]
+2021-11-17 10:27:30,304 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:27:30,305 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:28:05,472 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:28:05,577 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:28:05,577 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:28:05,577 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35945]
+2021-11-17 10:28:06,059 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35952]
+2021-11-17 10:28:06,060 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:28:06,060 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:28:28,468 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:28:28,569 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:28:28,570 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:28:28,570 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35952]
+2021-11-17 10:28:28,996 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35962]
+2021-11-17 10:28:28,996 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:28:28,996 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:28:50,447 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:28:50,550 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:28:50,551 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:28:50,551 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35962]
+2021-11-17 10:28:51,000 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35969]
+2021-11-17 10:28:51,000 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:28:51,000 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:29:05,734 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:29:05,841 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:29:05,842 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:29:05,842 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35969]
+2021-11-17 10:29:06,542 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35975]
+2021-11-17 10:29:06,543 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:29:06,543 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:30:44,931 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:30:45,039 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:30:45,040 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:30:45,040 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35975]
+2021-11-17 10:30:45,728 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35985]
+2021-11-17 10:30:45,728 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:30:45,728 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:31:15,844 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:31:15,947 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:31:15,948 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:31:15,948 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35985]
+2021-11-17 10:31:16,367 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [35994]
+2021-11-17 10:31:16,367 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:31:16,367 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:32:15,397 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:32:15,499 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:32:15,500 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:32:15,500 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [35994]
+2021-11-17 10:32:16,200 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36001]
+2021-11-17 10:32:16,200 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:32:16,201 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:33:54,461 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:33:54,567 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:33:54,568 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:33:54,568 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36001]
+2021-11-17 10:33:55,297 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36045]
+2021-11-17 10:33:55,297 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:33:55,297 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:34:14,862 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:34:14,963 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:34:14,963 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:34:14,963 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36045]
+2021-11-17 10:34:15,391 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36053]
+2021-11-17 10:34:15,391 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:34:15,391 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:35:29,122 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:35:29,223 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 10:35:29,224 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 10:35:29,224 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36053]
+2021-11-17 10:35:29,969 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36071]
+2021-11-17 10:35:29,970 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:35:29,970 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:35:35,573 loglevel=ERROR  logger=uvicorn.error run_asgi() L376  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/_backends/_asyncio.py", line 805, in run_sync_in_worker_thread
+    return await future
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/anyio/_backends/_asyncio.py", line 743, in run
+    result = func(*args)
+  File "./routers/authRoutes.py", line 29, in login
+    access_token = auth_handler.encode_token(user['username'])
+  File "./services/authService.py", line 35, in encode_token
+    return jwt.encode(
+AttributeError: module 'jwt' has no attribute 'encode'
+2021-11-17 10:36:51,475 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:36:51,579 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36071]
+2021-11-17 10:36:51,583 loglevel=ERROR  logger=uvicorn.error send() L132  Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+
+2021-11-17 10:37:09,791 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36122]
+2021-11-17 10:37:09,792 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:37:09,792 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 10:38:28,281 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 10:38:28,386 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36122]
+2021-11-17 10:38:28,395 loglevel=ERROR  logger=uvicorn.error send() L132  Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+
+2021-11-17 10:40:03,385 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36196]
+2021-11-17 10:40:03,386 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 10:40:03,386 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:43:10,219 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:43:10,325 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:43:10,325 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:43:10,326 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36196]
+2021-11-17 15:43:11,066 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36332]
+2021-11-17 15:43:11,066 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:43:11,067 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:43:36,978 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:43:37,086 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:43:37,087 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:43:37,087 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36332]
+2021-11-17 15:43:37,816 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36352]
+2021-11-17 15:43:37,816 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:43:37,816 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:43:48,145 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:43:48,250 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:43:48,250 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:43:48,250 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36352]
+2021-11-17 15:43:48,704 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36357]
+2021-11-17 15:43:48,704 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:43:48,704 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:44:36,425 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:44:36,527 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:44:36,528 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:44:36,528 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36357]
+2021-11-17 15:44:37,138 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36365]
+2021-11-17 15:44:37,138 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:44:37,139 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:46:18,206 loglevel=INFO   logger=routers.userRoutes read_users() L29   ---getting users---
+2021-11-17 15:47:42,921 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:47:43,034 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:47:43,038 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:47:43,038 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36365]
+2021-11-17 15:47:43,767 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36400]
+2021-11-17 15:47:43,767 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:47:43,768 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:47:48,321 loglevel=INFO   logger=routers.userRoutes read_users() L29   ---getting users---
+2021-11-17 15:47:48,324 loglevel=ERROR  logger=uvicorn.error run_asgi() L376  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 243, in app
+    is_coroutine=is_coroutine,
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/fastapi/routing.py", line 137, in serialize_response
+    raise ValidationError(errors, field.type_)
+pydantic.error_wrappers.ValidationError: 1 validation error for User
+response
+  value is not a valid list (type=type_error.list)
+2021-11-17 15:48:23,530 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:48:23,634 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:48:23,635 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:48:23,635 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36400]
+2021-11-17 15:48:24,317 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36408]
+2021-11-17 15:48:24,317 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:48:24,318 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:48:26,896 loglevel=INFO   logger=routers.userRoutes read_users() L29   ---getting users---
+2021-11-17 15:49:01,070 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:49:01,171 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:49:01,171 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:49:01,171 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36408]
+2021-11-17 15:49:01,613 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36417]
+2021-11-17 15:49:01,613 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:49:01,614 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:51:06,936 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:51:07,042 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:51:07,043 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:51:07,043 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36417]
+2021-11-17 15:51:07,756 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36435]
+2021-11-17 15:51:07,757 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:51:07,758 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:51:11,065 loglevel=INFO   logger=routers.userRoutes read_users() L29   ---getting users---
+2021-11-17 15:52:06,790 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:52:06,896 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:52:06,897 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:52:06,897 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36435]
+2021-11-17 15:52:07,678 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36442]
+2021-11-17 15:52:07,678 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:52:07,679 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:52:11,874 loglevel=INFO   logger=routers.userRoutes read_users() L29   ---getting users---
+2021-11-17 15:52:35,844 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:52:35,946 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:52:35,947 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:52:35,947 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36442]
+2021-11-17 15:52:36,404 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36451]
+2021-11-17 15:52:36,404 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:52:36,405 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:53:37,960 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:53:38,061 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:53:38,062 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:53:38,063 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36451]
+2021-11-17 15:53:38,505 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36460]
+2021-11-17 15:53:38,505 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:53:38,506 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:57:27,645 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:57:27,748 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2021-11-17 15:57:27,748 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2021-11-17 15:57:27,748 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36460]
+2021-11-17 15:57:28,459 loglevel=INFO   logger=uvicorn.error serve() L84   Started server process [36517]
+2021-11-17 15:57:28,459 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2021-11-17 15:57:28,460 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2021-11-17 15:57:37,323 loglevel=INFO   logger=uvicorn.error shutdown() L263  Shutting down
+2021-11-17 15:57:37,424 loglevel=INFO   logger=uvicorn.error serve() L94   Finished server process [36517]
+2021-11-17 15:57:37,430 loglevel=ERROR  logger=uvicorn.error send() L132  Traceback (most recent call last):
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/Volumes/donnees/PROJETS/fastApi_initializer/lib/python3.7/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+

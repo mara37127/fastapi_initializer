@@ -1,0 +1,37 @@
+version: '3'
+services:
+  database-mysql:
+    image: 'mysql:8.0.18'
+    restart: always
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_HOST=database-mysql
+    volumes: 
+      - ./mysqlData:/var/lib/mysql
+    networks: 
+      - fastapiNetwork
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+  
+  app:
+    restart: always
+    image: 'myapp:v1'
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_HOST=database-mysql
+    depends_on:
+      - database-mysql
+    ports:
+      - 8080:8080
+    volumes:
+    - ./data:/app/src/logs
+    networks: 
+      - fastapiNetwork
+
+
+networks: 
+  fastapiNetwork:
+    driver: bridge
